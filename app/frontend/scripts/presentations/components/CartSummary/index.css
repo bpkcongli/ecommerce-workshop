@@ -1,0 +1,51 @@
+.cart-summary {
+  border: 1px solid #BFBFBF;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: space-between;
+  padding: 24px;
+  width: 360px;
+}
+
+.cart-summary__top h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.cart-summary__top .summary-entry {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-entry span {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.summary-entry.cart-summary__subtotal .summary-entry__value,
+.summary-entry.cart-summary__tax .summary-entry__value,
+.summary-entry.cart-summary__delivery-fee .summary-entry__value,
+.summary-entry.cart-summary__total .summary-entry__label {
+  font-weight: 600;
+}
+
+.summary-entry.cart-summary__total .summary-entry__value {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.summary-entry:last-child span {
+  margin-bottom: 0;
+}
+
+.cart-summary__top hr {
+  margin-bottom: 18px;
+}
+
+.cart-summary button.button--primary {
+  width: 100%;
+}

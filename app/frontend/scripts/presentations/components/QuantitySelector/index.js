@@ -1,6 +1,6 @@
 import './index.css';
 
-const QuantitySelector = (stock) => ({
+const QuantitySelector = (currentQuantity, stock) => ({
   async render() {
     return `
       <div class="quantity-selector">
@@ -13,7 +13,7 @@ const QuantitySelector = (stock) => ({
           pattern="\\d{1}"
           min="0"
           max="${stock}"
-          value="0"
+          value="${currentQuantity}"
         />
         <button type="button" class="quantity-selector__increment">
           <i class="fas fa-plus"></i>
