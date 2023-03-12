@@ -1,0 +1,23 @@
+button.button {
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  line-height: 18px;
+  width: 216px;
+}
+
+button.button.button--primary {
+  background-color: #031141;
+  color: #FFFFFF;
+}
+
+button.button.button--secondary {
+  background-color: #C6D5F5;
+  color: #031141;
+}

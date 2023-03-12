@@ -1,0 +1,22 @@
+.product-performance {
+  align-items: center;
+  display: flex;
+}
+
+.product-performance .product-rating {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.product-rating .product-rating__stars {
+  color: #FFBA09;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.product-performance .product-total-reviews {
+  font-size: 15px;
+  font-weight: 500;
+}
