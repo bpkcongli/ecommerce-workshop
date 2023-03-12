@@ -1,0 +1,27 @@
+@media screen and (min-width: 360px) {
+  header.app-bar {
+    padding: 12px 24px;
+  }
+
+  nav.app-bar__navigation p {
+    display: none;
+  }
+
+  h2.app-jumbotron__text {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header.app-bar {
+    padding: 24px 96px;
+  }
+
+  nav.app-bar__navigation p {
+    display: block;
+  }
+
+  h2.app-jumbotron__text {
+    font-size: 36px;
+  }
+}
