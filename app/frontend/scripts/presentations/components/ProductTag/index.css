@@ -1,0 +1,9 @@
+.product-tag {
+  border: 2px solid #031141;
+  border-radius: 24px;
+  color: #031141;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  width: fit-content;
+}

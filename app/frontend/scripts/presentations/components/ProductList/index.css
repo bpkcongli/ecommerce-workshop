@@ -1,0 +1,33 @@
+.product-list {
+  border-color: transparent;
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  transition: border-color .25s linear;
+  -webkit-transition: border-color .25s linear;
+}
+
+.product-list:hover {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.product-list::-webkit-scrollbar,
+.product-list::-webkit-scrollbar-thumb,
+.product-list::-webkit-scrollbar-corner {
+  border-right-style: inset;
+  border-color: inherit;
+  border-right-width: calc(100vw + 100vh);
+}
+
+.product-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.product-list .product-card {
+  margin-right: 50px;
+}
+
+.product-list .product-card:last-child {
+  margin-right: 0;
+}
