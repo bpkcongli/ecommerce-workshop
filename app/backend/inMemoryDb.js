@@ -130,36 +130,11 @@ const products = [
 ];
 
 const carts = {
-  items: [
-    {
-      name: 'KLIPPAN',
-      imageUrl: 'http://localhost:3000/assets/images/7d3c5375-0f2c-46eb-b7b9-7d17c40cba29.jpg',
-      price: '249.99',
-      quantity: 1,
-      total: '249.99',
-      stock: 14,
-    },
-    {
-      name: 'HAVBERG',
-      imageUrl: 'http://localhost:3000/assets/images/4a6993af-b0be-473b-9c20-2a04e2af1549.jpg',
-      price: '429.99',
-      quantity: 1,
-      total: '429.99',
-      stock: 5,
-    },
-    {
-      name: 'LINNEBÄCK',
-      imageUrl: 'http://localhost:3000/assets/images/92a087cb-35ab-473e-82c4-b3cf448b593e.jpg',
-      price: '64.49',
-      quantity: 1,
-      total: '64.49',
-      stock: 55,
-    },
-  ],
-  subtotal: '744.47',
-  tax: '74.45',
-  deliveryFee: '50.00',
-  total: '868.92',
+  items: [],
+  subtotal: '0.00',
+  tax: '0.00',
+  deliveryFee: '0.00',
+  total: '0.00',
 };
 
 module.exports = {

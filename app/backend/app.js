@@ -66,14 +66,32 @@ app.post('/carts/add-to-cart', (req, res) => {
   }
 
   const totalPricePerItem = (Number(targetProduct.price) * quantity).toFixed(2);
-  carts.items.push({
-    name: targetProduct.name,
-    imageUrl: targetProduct.imageUrl,
-    price: targetProduct.price,
-    quantity,
-    total: totalPricePerItem,
-    stock: targetProduct.stock,
-  });
+  const isProductAlreadyInCart = carts.items.find((item) => item.id === id) !== undefined;
+
+  if (!isProductAlreadyInCart) {
+    const {
+      name,
+      imageUrl,
+      price,
+      stock,
+    } = targetProduct;
+
+    carts.items.push({
+      id,
+      name,
+      imageUrl,
+      price,
+      quantity,
+      total: totalPricePerItem,
+      stock,
+    });
+  } else {
+    carts.items = [...carts.items].map(
+      (item) => (item.id === id
+        ? { ...item, quantity: item.quantity + quantity }
+        : item),
+    );
+  }
 
   const subtotal = carts.items.reduce((prev, current) => prev + Number(current.total), 0);
   carts.subtotal = subtotal.toFixed(2);
