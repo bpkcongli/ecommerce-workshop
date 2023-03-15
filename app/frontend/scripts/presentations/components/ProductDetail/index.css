@@ -42,6 +42,11 @@
   margin-bottom: 12px;
 }
 
+.product-detail__interaction div.product-detail__stock--empty {
+  color: #FF4D4F;
+  font-style: italic;
+}
+
 .product-detail__interaction .quantity-selector {
   margin-bottom: 24px;
 }

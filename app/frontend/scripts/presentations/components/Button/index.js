@@ -1,13 +1,24 @@
 import './index.css';
 
-const Button = ({ model, label, className }) => ({
+const Button = ({
+  model,
+  label,
+  className,
+  disabled,
+}) => ({
   async render() {
     const classVariant = `button button--${model} ${className}`.trim();
 
     return `
-      <button type="button" class="${classVariant}">
-        ${label}
-      </button>
+      ${!disabled ? `
+        <button type="button" class="${classVariant}">
+          ${label}
+        </button>
+      ` : `
+        <button type="button" class="${classVariant}" disabled>
+          ${label}
+        </button>
+      `}
     `;
   },
 

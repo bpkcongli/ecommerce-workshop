@@ -21,3 +21,9 @@ button.button.button--secondary {
   background-color: #C6D5F5;
   color: #031141;
 }
+
+button.button:disabled {
+  background-color: #BFBFBF;
+  color: #FFFFFF;
+  cursor: default;
+}
