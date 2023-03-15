@@ -25,7 +25,7 @@ const Home = {
         const productList = ProductList([productTag.name]);
         return `
           <div class="product-catalog">
-            ${await ProductTag(productTag.name).render()}
+            ${await ProductTag(productTag.label).render()}
             ${await productList.render()}
           </div>
         `;

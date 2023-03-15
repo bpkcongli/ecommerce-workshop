@@ -10,7 +10,7 @@ const ProductRepo = {
   getAllProducts: async (tags) => {
     let url = `${CONFIG.API_BASEURL}/products`;
     if (tags.length > 0) {
-      url += `?tags_like=${tags.join(',')}`;
+      url += `?tags=${tags.join(',')}`;
     }
 
     const response = await fetch(url);

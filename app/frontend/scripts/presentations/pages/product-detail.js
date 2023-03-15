@@ -22,7 +22,7 @@ const ProductDetailPage = {
     productDetailContainer.innerHTML += await productDetail.render();
 
     const similarProductTag = ProductTag('Similar Products');
-    const similarProductList = ProductList([product.tags[0]]);
+    const similarProductList = ProductList(product.tags);
 
     productDetailContainer.innerHTML += `
       <div class="product-catalog">

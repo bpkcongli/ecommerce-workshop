@@ -14,6 +14,7 @@ const QuantitySelector = (currentQuantity, stock) => ({
           min="0"
           max="${stock}"
           value="${currentQuantity}"
+          disabled
         />
         <button type="button" class="quantity-selector__increment">
           <i class="fas fa-plus"></i>
@@ -23,16 +24,20 @@ const QuantitySelector = (currentQuantity, stock) => ({
   },
 
   async afterRender() {
-    const decrementBtn = document.querySelector('quantity-selector__decrement');
-    // const input = document.querySelector('.quantity-selector input');
-    const incrementBtn = document.querySelector('quantity-selector__increment');
+    const decrementBtn = document.querySelector('.quantity-selector__decrement');
+    const input = document.querySelector('.quantity-selector input');
+    const incrementBtn = document.querySelector('.quantity-selector__increment');
 
     const onClickDecrementQuantityHandler = () => {
-      console.log('decrement');
+      const updatedValue = Number(input.value) - 1;
+      if (updatedValue < 0) return;
+      input.value = String(updatedValue);
     };
 
     const onClickIncrementQuantityHandler = () => {
-      console.log('increment');
+      const updatedValue = Number(input.value) + 1;
+      if (updatedValue > stock) return;
+      input.value = String(updatedValue);
     };
 
     decrementBtn.addEventListener('click', onClickDecrementQuantityHandler);

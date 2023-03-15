@@ -26,8 +26,13 @@
   width: 500px;
 }
 
-.product-detail__overview .product-tag {
+.product-detail__overview .product-detail__tags {
+  display: flex;
   margin-bottom: 24px;
+}
+
+.product-detail__tags .product-tag {
+  margin-right: 10px;
 }
 
 .product-detail__interaction div.product-detail__stock {

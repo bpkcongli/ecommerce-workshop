@@ -2,6 +2,7 @@ import Button from '../Button';
 import ProductPerformance from '../ProductPerformance';
 import ProductTag from '../ProductTag';
 import QuantitySelector from '../QuantitySelector';
+import productCategoryMapper from '../../../helpers/productCategoryMapper';
 import './index.css';
 
 const ProductDetail = ({
@@ -14,10 +15,12 @@ const ProductDetail = ({
   totalReviews,
   stock,
 }) => ({
-  quantitySelector: QuantitySelector(stock),
+  quantitySelector: QuantitySelector(0, stock),
 
   async render() {
-    const productTag = ProductTag(tags[0]);
+    const productTags = await Promise.all(
+      tags.map(async (tag) => ProductTag(productCategoryMapper[tag]).render()),
+    );
 
     const productPerformance = ProductPerformance({ rating, totalReviews });
 
@@ -40,7 +43,7 @@ const ProductDetail = ({
         </div>
         <div class="product-detail__right">
           <div class="product-detail__overview">
-            ${await productTag.render()}
+            <div class="product-detail__tags">${productTags.join('')}</div>
             <div class="product-detail__name">${name}</div>
             <div class="product-detail__price">$${price}</div>
             <p class="product-detail__description">${description}</p>
