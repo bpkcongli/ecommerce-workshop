@@ -3,33 +3,40 @@ import ProductRepo from '../../../repositories/ProductRepo';
 import './index.css';
 
 const ProductList = (tagName) => ({
-  async render() {
-    let productListContent = '';
+  _productCards: [],
 
+  async render() {
     const products = await ProductRepo.getAllProducts(tagName);
-    products.forEach(async ({
-      id,
-      name,
-      imageUrl,
-      price,
-    }) => {
-      productListContent += ProductCard({
+    const productListContent = await Promise.all(
+      products.map(async ({
         id,
         name,
         imageUrl,
         price,
-      }).render();
-    });
+        stock,
+      }) => {
+        const productCard = ProductCard({
+          id,
+          name,
+          imageUrl,
+          price,
+          stock,
+        });
+
+        this._productCards.push(productCard);
+        return productCard.render();
+      }),
+    );
 
     return `
       <div class="product-list">
-        ${productListContent}
+        ${productListContent.join('')}
       </div>
     `;
   },
 
   async afterRender() {
-    // TODO: call after render
+    await Promise.all(this._productCards.map(async (productCard) => productCard.afterRender()));
   },
 });
 

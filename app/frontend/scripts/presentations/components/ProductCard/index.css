@@ -54,3 +54,7 @@ span.product-card__price {
   font-size: 20px;
   font-weight: 700;
 }
+
+span.product-card__empty-stock {
+  color: #FF4D4F;
+}

@@ -19,10 +19,14 @@ const Home = {
 
   async afterRender() {
     const container = document.querySelector('.app-catalog');
+    const productLists = [];
+
     const productTags = await ProductRepo.getAllProductTags();
     const productCatalogs = await Promise.all(
       productTags.map(async (productTag) => {
         const productList = ProductList([productTag.name]);
+        productLists.push(productList);
+
         return `
           <div class="product-catalog">
             ${await ProductTag(productTag.label).render()}
@@ -33,6 +37,7 @@ const Home = {
     );
 
     container.innerHTML += productCatalogs.join('');
+    await Promise.all((productLists.map(async (productList) => productList.afterRender())));
   },
 };
 

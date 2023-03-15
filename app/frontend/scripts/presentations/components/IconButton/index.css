@@ -21,3 +21,8 @@ button.icon-button--secondary {
 button.icon-button svg {
   font-size: 20px;
 }
+
+button.icon-button:disabled {
+  background-color: #BFBFBF;
+  cursor: default;
+}

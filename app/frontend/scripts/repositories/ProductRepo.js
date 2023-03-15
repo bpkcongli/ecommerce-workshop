@@ -23,6 +23,16 @@ const ProductRepo = {
     const responseJSON = await response.json();
     return responseJSON;
   },
+
+  addToCart: async (payload) => {
+    const response = await fetch(`${CONFIG.API_BASEURL}/carts/add-to-cart`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const responseJSON = await response.json();
+    return responseJSON;
+  },
 };
 
 export default ProductRepo;
