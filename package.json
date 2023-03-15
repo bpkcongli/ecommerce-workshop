@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "run-api": "npx json-server --port 3000 --watch app/backend/db.json --static app/backend/public/",
-    "run-api:express": "nodemon app/backend/app.js",
+    "run-api": "node app/backend/app.js",
+    "run-api:dev": "nodemon app/backend/app.js",
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
