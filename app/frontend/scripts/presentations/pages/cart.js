@@ -32,6 +32,8 @@ const Cart = {
 
     cartContainer.innerHTML += await cartDetail.render();
     cartContainer.innerHTML += await cartSummary.render();
+
+    await cartDetail.afterRender();
   },
 };
 

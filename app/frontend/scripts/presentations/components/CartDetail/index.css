@@ -9,9 +9,18 @@
   overflow-x: hidden;
   overflow-y: auto;
   padding: 24px;
+  padding-top: 0;
   width: 720px;
   transition: border-color .25s linear;
   -webkit-transition: border-color .25s linear;
+}
+
+.cart-detail__inner--empty {
+  align-items: center;
+  color: #8C8C8C;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
 }
 
 .cart-detail__inner:hover {
@@ -33,6 +42,12 @@
 
 .cart-detail table {
   border-spacing: 0;
+}
+
+.cart-detail table thead {
+  background-color: #FFFFFF;
+  position: sticky;
+  top: 0;
 }
 
 .cart-detail thead th {

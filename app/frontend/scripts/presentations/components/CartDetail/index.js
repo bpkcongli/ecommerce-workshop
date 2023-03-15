@@ -43,6 +43,7 @@ const CartDetail = (items) => ({
 
     return `
       <div class="cart-detail">
+      ${items.length !== 0 ? `
         <div class="cart-detail__inner">
           <table>
             <thead>
@@ -58,6 +59,11 @@ const CartDetail = (items) => ({
             </tbody>
           </table>
         </div>
+      ` : `
+        <div class="cart-detail__inner cart-detail__inner--empty">
+          <p>Belum ada produk di keranjang Anda.</p>
+        </div>
+      `}  
       </div>
     `;
   },
