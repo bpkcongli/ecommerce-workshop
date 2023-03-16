@@ -6,7 +6,6 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 import App from './presentations/app';
 import '../styles/main.css';
-import '../styles/responsive.css';
 
 const app = new App({
   content: document.querySelector('#mainContent'),
